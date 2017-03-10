@@ -83,7 +83,7 @@
                 <Paragraph>
                     <TextBlock>
                         <Hyperlink Foreground="#0066B3"
-                                   NavigateUri="http://opendatastore.brussels/en/dataset/parking-publicparkings"
+                                   NavigateUri="http://opendatastore.brussels/en/dataset/villo"
                                    RequestNavigate="HyperlinkRequestNavigate"
                                    TextDecorations="none">
 
