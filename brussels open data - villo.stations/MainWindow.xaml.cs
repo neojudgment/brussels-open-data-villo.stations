@@ -411,7 +411,7 @@ namespace OpenData
                     {
                         if (_mytag == 0)
                         {
-                            _mytag = 301;
+                            _mytag = 302;
                         }
 
                         if (_mytag == i)
@@ -520,7 +520,7 @@ namespace OpenData
                 {
                     if (_firststart)
                     {
-                        tag = 301;
+                        tag = 302;
                         _firststart = false;
                     }
                     else if (!_RealTime)
