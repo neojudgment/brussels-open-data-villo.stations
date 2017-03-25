@@ -2,7 +2,8 @@
 // |                                                                                                            |
 // |    brussels open data - villo.stations is a proof of concept (PoC). <https://github.com/neojudgment/>      |
 // |                                                                                                            |
-// |    villo.stations shows bike stations in territory of the Brussels-Capital Region in Belgium.              |
+// |    villo.stations, location of the Villo! stations in the Brussels Capital Region with indication of       |
+// |    the availability (bikes, bike stands) in real time.                                                     |
 // |                                                                                                            |
 // |    brussels open data - villo.stations uses Microsoft WindowsAPICodePack and GMap.NET to                   |
 // |    demonstrate how to retrieve data from Brussels open data Store.                                         |

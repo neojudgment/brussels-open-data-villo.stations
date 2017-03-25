@@ -2,7 +2,7 @@
 
 brussels open data - villo.stations is a proof of concept (PoC).
 
-[villo.stations](http://opendatastore.brussels/en/dataset/villo) shows bike stations in territory of the Brussels-Capital Region in Belgium. 
+[villo.stations](https://opendata.brussels.be/explore/dataset/villo-stations-availability-in-real-time/), location of the Villo! stations in the Brussels Capital Region with indication of the availability (bikes, bike stands) in real time. 
 
 ![](https://github.com/neojudgment/brussels-open-data-villo.stations/blob/master/brussels%20open%20data%20-%20villo.stations/Screenshots/home.jpg?raw=true)
 

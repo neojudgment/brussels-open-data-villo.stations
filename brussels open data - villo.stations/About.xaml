@@ -83,14 +83,14 @@
                 <Paragraph>
                     <TextBlock>
                         <Hyperlink Foreground="#0066B3"
-                                   NavigateUri="http://opendatastore.brussels/en/dataset/villo"
+                                   NavigateUri="https://opendata.brussels.be/explore/dataset/villo-stations-availability-in-real-time/"
                                    RequestNavigate="HyperlinkRequestNavigate"
                                    TextDecorations="none">
 
-                            villo.stations
+                            villo.stations,
                         </Hyperlink>
                     </TextBlock>
-                    shows bike stations in territory of the Brussels-Capital Region in Belgium.
+                    location of the Villo! stations in the Brussels Capital Region with indication of the availability (bikes, bike stands) in real time.
                 </Paragraph>
 
                 <Paragraph>

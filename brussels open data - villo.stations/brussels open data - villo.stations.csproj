@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OpenData</RootNamespace>
-    <AssemblyName>brussels open data - villo.stations</AssemblyName>
+    <AssemblyName>villo.stations</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,7 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <IncrementalBuild>true</IncrementalBuild>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>brussels open data - villo.stations.xml</DocumentationFile>
+    <DocumentationFile>villo.stations.xml</DocumentationFile>
     <WarningLevel>1</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -50,7 +50,7 @@
     <IncrementalBuild>false</IncrementalBuild>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>brussels open data - villo.stations.xml</DocumentationFile>
+    <DocumentationFile>villo.stations.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
   </PropertyGroup>
@@ -71,7 +71,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DocumentationFile>brussels open data - villo.stations.xml</DocumentationFile>
+    <DocumentationFile>villo.stations.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
@@ -84,7 +84,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DefineConstants>TRACE</DefineConstants>
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DocumentationFile>brussels open data - villo.stations.xml</DocumentationFile>
+    <DocumentationFile>villo.stations.xml</DocumentationFile>
     <Optimize>false</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>

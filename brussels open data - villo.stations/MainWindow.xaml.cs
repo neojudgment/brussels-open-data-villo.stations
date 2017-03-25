@@ -2,7 +2,8 @@
 // |                                                                                                            |
 // |    brussels open data - villo.stations is a proof of concept (PoC). <https://github.com/neojudgment/>      |
 // |                                                                                                            |
-// |    villo.stations shows bike stations in territory of the Brussels-Capital Region in Belgium.              |
+// |    villo.stations, location of the Villo! stations in the Brussels Capital Region with indication of       |
+// |    the availability (bikes, bike stands) in real time.                                                     |
 // |                                                                                                            |
 // |    brussels open data - villo.stations uses Microsoft WindowsAPICodePack and GMap.NET to                   |
 // |    demonstrate how to retrieve data from Brussels open data Store.                                         |
@@ -386,25 +387,37 @@ namespace OpenData
 
                 do
                 {
-                    if (!string.IsNullOrEmpty(ab[i].position.lat.ToString(CultureInfo.InvariantCulture)))
+                    try
                     {
-                        Coordinates0 = ab[i].position.lat.ToString(CultureInfo.InvariantCulture);
+                        if (!string.IsNullOrEmpty(ab[i].position.lat.ToString(CultureInfo.InvariantCulture)))
+                        {
+                            Coordinates0 = ab[i].position.lat.ToString(CultureInfo.InvariantCulture);
+                        }
+                        else
+                        {
+                            i += 1;
+                            continue;
+                        }
+
+                        if (!string.IsNullOrEmpty(ab[i].position.lng.ToString(CultureInfo.InvariantCulture)))
+                        {
+                            Coordinates1 = ab[i].position.lng.ToString(CultureInfo.InvariantCulture);
+                        }
+                        else
+                        {
+                            i += 1;
+                            continue;
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
+                        Trace.WriteLine(DateTime.Now + " " + "Exception dans PopulateBingMap " + ex);
+                        Console.WriteLine(i);
+                        i += 1;
                         continue;
                     }
 
-                    if (!string.IsNullOrEmpty(ab[i].position.lng.ToString(CultureInfo.InvariantCulture)))
-                    {
-                        Coordinates1 = ab[i].position.lng.ToString(CultureInfo.InvariantCulture);
-                    }
-                    else
-                    {
-                        continue;
-                    }
-
-                    //    // Position du marker
+                    // Position du marker
                     marker = new GMapMarker(new PointLatLng(ab[i].position.lat, ab[i].position.lng));
 
                     if (ab[i].status == "OPEN")
@@ -441,7 +454,7 @@ namespace OpenData
                         IsHitTestVisible = true
                     };
 
-                    //    // Ajout du Custom PushPin sur le MapLayer
+                    // Ajout du Custom PushPin sur le MapLayer
                     marker.Offset = new Point(-12.5, -29);
                     marker.ZIndex = i;
                     MainMap.Markers.Add(marker);
