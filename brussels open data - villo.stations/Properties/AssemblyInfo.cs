@@ -1,5 +1,4 @@
-﻿//INSTANT C# NOTE: Formerly VB project-level imports:
-using System;
+﻿using System;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
@@ -12,10 +11,10 @@ using System.Windows;
 // Vérifiez les valeurs des attributs de l'assembly
 
 [assembly: AssemblyTitle("brussels open data - villo.stations")]
-[assembly: AssemblyDescription("villo.stations is a free wireless internet network covering certain areas of Brussels-Capital Region territory in Belgium.")]
+[assembly: AssemblyDescription("villo.stations, location of the Villo! stations in the Brussels Capital Region with indication of the availability (bikes, bike stands) in real time.")]
 [assembly: AssemblyCompany("brussels open data - villo.stations")]
 [assembly: AssemblyProduct("brussels open data - villo.stations")]
-[assembly: AssemblyCopyright("Copyright © 2016 Pascal Hubert")]
+[assembly: AssemblyCopyright("Copyright © 2017 Pascal Hubert")]
 [assembly: AssemblyTrademark("Pascal Hubert")]
 [assembly: ComVisible(false)]
 
@@ -52,7 +51,7 @@ using System.Windows;
 // en utilisant '*', comme indiqué ci-dessous :
 // <Assembly: AssemblyVersion("1.0.*")>
 
-[assembly: AssemblyVersion("0.7.*")]
+[assembly: AssemblyVersion("0.8.*")]
 [assembly: NeutralResourcesLanguage("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyDelaySign(false)]

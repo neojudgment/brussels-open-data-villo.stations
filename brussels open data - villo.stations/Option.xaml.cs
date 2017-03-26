@@ -87,6 +87,15 @@ namespace OpenData
                 CheckBoxShowTiles.IsChecked = false;
             }
 
+            if (Settings.Default.RealTime)
+            {
+                CheckBoxRealTime.IsChecked = true;
+            }
+            else
+            {
+                CheckBoxRealTime.IsChecked = false;
+            }
+
             if (Settings.Default.Routing)
             {
                 CheckBoxRoute.IsChecked = true;
@@ -351,6 +360,15 @@ namespace OpenData
             else
             {
                 Settings.Default.UseProxy = false;
+            }
+
+            if (CheckBoxRealTime.IsChecked ?? true)
+            {
+                Settings.Default.RealTime = true;
+            }
+            else
+            {
+                Settings.Default.RealTime = false;
             }
 
             // L'adresse proxy contient http:// ou https//

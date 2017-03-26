@@ -278,12 +278,12 @@
                FontWeight="SemiBold" />
 
         <CheckBox Name="CheckBoxProxyAuthentication"
-                  Width="183"
+                  Width="110"
                   Height="23"
                   Margin="156,239,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  Content="Use proxy authentication"
+                  Content="Use proxy"
                   FontFamily="./resources/#Segoe WP"
                   FontSize="13" />
 
@@ -497,6 +497,16 @@
             HorizontalAlignment="Left"
             Height="23"
             Margin="302,209,0,0"
+            VerticalAlignment="Top"
+            Width="89"
+            FontFamily="./resources/#Segoe WP"
+            FontSize="14" />
+
+        <CheckBox x:Name="CheckBoxRealTime"
+            Content="Real Time"
+            HorizontalAlignment="Left"
+            Height="23"
+            Margin="302,239,0,0"
             VerticalAlignment="Top"
             Width="89"
             FontFamily="./resources/#Segoe WP"

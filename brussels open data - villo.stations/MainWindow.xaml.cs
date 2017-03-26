@@ -88,6 +88,7 @@ namespace OpenData
         private readonly DispatcherTimer _timerBattery;
         private readonly DispatcherTimer _timerGpsScan;
         private readonly DispatcherTimer _timerInternetIcone;
+        private readonly DispatcherTimer _timerRealTime;
         private readonly TextWriterTraceListener _tl;
         private string _batteryState;
         private double _bearing;
@@ -230,6 +231,11 @@ namespace OpenData
                 Interval = TimeSpan.FromSeconds(Settings.Default.GpsScanInterval)
             };
 
+            _timerRealTime = new DispatcherTimer(DispatcherPriority.Background)
+            {
+                Interval = TimeSpan.FromMinutes(3)
+            };
+
             // Etat de l'alimentation au démarage
             if (PowerManager.IsBatteryPresent)
             {
@@ -246,12 +252,18 @@ namespace OpenData
 
             _timerInternetIcone.Start();
 
+            if (Settings.Default.RealTime)
+            {
+                _timerRealTime.Start();
+            }
+
             // On surveille l'état de l'alimentation
             PowerManager.BatteryLifePercentChanged += PowerModeChanged;
 
             _timerInternetIcone.Tick += TimerInternetDetection;
             _timerBattery.Tick += TimerBatteryState;
             _timerGpsScan.Tick += TimerGpsScanTick;
+            _timerRealTime.Tick += TimerRealTimeTick;
         }
 
         #endregion New
@@ -463,8 +475,8 @@ namespace OpenData
 
                 while (!(i == ab.Count - 1));
 
-                //Trace.WriteLine(DateTime.Now + " " + "Nombre de points d'accès: " + (i -= 1));
-                //Console.WriteLine(DateTime.Now + " " + "Nombre de points d'accès: " + (i -= 1));
+                Trace.WriteLine(DateTime.Now + " " + "Nombre de points d'accès: " + (i -= 1));
+                Console.WriteLine(DateTime.Now + " " + "Nombre de points d'accès: " + (i -= 1));
 
                 if (!Settings.Default.UseGpsHarware)
                 {
@@ -1127,6 +1139,21 @@ namespace OpenData
                 MainMap.ReloadMap();
             }
 
+            if (Settings.Default.RealTime == true)
+            {
+                if (!(_timerRealTime.IsEnabled))
+                {
+                    _timerRealTime.Start();
+                }
+            }
+            else
+            {
+                if (_timerRealTime.IsEnabled)
+                {
+                    _timerRealTime.Stop();
+                }
+            }
+
             Option.BingMapApiKeyUpdate = false;
         }
 
@@ -1712,6 +1739,15 @@ namespace OpenData
         }
 
         #endregion OpenComPort
+
+        #region TimerRealTime
+
+        private void TimerRealTimeTick(object sender, EventArgs e)
+        {
+            ButtonDownloadMouseDown(null, null);
+        }
+
+        #endregion TimerRealTime
 
         #region TimerGpsScan
 

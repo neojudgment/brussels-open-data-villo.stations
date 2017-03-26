@@ -277,7 +277,7 @@
                Margin="20,146,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Geometry Name: no data"
+               Content="Address: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -287,7 +287,7 @@
                Margin="20,165,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Id: no data"
+               Content="Credit Cards: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -307,7 +307,7 @@
                Margin="20,222,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Client: no data"
+               Content="Status: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -317,7 +317,7 @@
                Margin="20,240,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Client Type: no data"
+               Content="Contract Name: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -327,7 +327,7 @@
                Margin="20,258,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="AP Count: no data"
+               Content="Total Capacity: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -337,7 +337,7 @@
                Margin="20,276,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Interv CIRB: no data"
+               Content="Available Bike Stands: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -347,7 +347,7 @@
                Margin="20,294,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Installation Site: no data"
+               Content="Available Bikes: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -367,7 +367,7 @@
                Margin="20,330,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Status: no data"
+               Content="Last Update: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
@@ -377,7 +377,7 @@
                Margin="20,184,483,0"
                VerticalAlignment="Top"
                x:FieldModifier="private"
-               Content="Extern Id: no data"
+               Content="Bonus: no data"
                FontFamily="./resources/#Segoe WP"
                FontSize="12"
                Foreground="#FF898484" />
