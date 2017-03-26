@@ -429,20 +429,20 @@ namespace OpenData
 
                         if (_mytag == i)
                         {
-                            myIcon = new BitmapImage(new Uri("Resources\\wi-fi-6.png", UriKind.Relative));
+                            myIcon = new BitmapImage(new Uri("Resources\\villo6.png", UriKind.Relative));
                         }
                         else if (ab[i].bonus)
                         {
-                            myIcon = new BitmapImage(new Uri("Resources\\wi-fi-4.png", UriKind.Relative));
+                            myIcon = new BitmapImage(new Uri("Resources\\villo4.png", UriKind.Relative));
                         }
                         else
                         {
-                            myIcon = new BitmapImage(new Uri("Resources\\wi-fi-2.png", UriKind.Relative));
+                            myIcon = new BitmapImage(new Uri("Resources\\villo2.png", UriKind.Relative));
                         }
                     }
                     else
                     {
-                        myIcon = new BitmapImage(new Uri("Resources\\wi-fi-3.png", UriKind.Relative));
+                        myIcon = new BitmapImage(new Uri("Resources\\villo3.png", UriKind.Relative));
                     }
 
                     marker.Shape = new Image
