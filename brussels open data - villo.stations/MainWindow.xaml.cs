@@ -436,7 +436,7 @@ namespace OpenData
                     {
                         if (_mytag == 0)
                         {
-                            _mytag = 302;
+                            _mytag = 57;
                         }
 
                         if (_mytag == i)
@@ -545,7 +545,7 @@ namespace OpenData
                 {
                     if (_firststart)
                     {
-                        tag = 302;
+                        tag = 57;
                         _firststart = false;
                     }
                     else if (!_RealTime)
@@ -601,6 +601,8 @@ namespace OpenData
                 {
                     LabelStationName.Content = "Station Name: " +
                                                 ab[tag].name;
+                    LabelStationName.ToolTip = "Station Name: " +
+                                                ab[tag].name;
                 }
                 else
                 {
@@ -634,6 +636,8 @@ namespace OpenData
                 if (ab[tag].address != null)
                 {
                     LabelAdress.Content = "Address: " +
+                                                ab[tag].address;
+                    LabelAdress.ToolTip = "Address: " +
                                                 ab[tag].address;
                 }
                 else
