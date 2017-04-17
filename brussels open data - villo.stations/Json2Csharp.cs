@@ -11,12 +11,12 @@
 // |    brussels open data - villo.stations uses Elysium library that implements Modern UI for                  |
 // |    Windows Presentation Foundation.                                                                        |
 // |                                                                                                            |
-// |    This program is under Microsoft Public License (Ms-RL)                                                  |
+// |    This program is under Microsoft Reciprocal License (Ms-RL)                                              |
 // |                                                                                                            |
 // |    This program is distributed in the hope that it will be useful but WITHOUT ANY WARRANTY;                |
 // |    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.               |
 // |                                                                                                            |
-// |    You should have received a copy of the Microsoft Public License (Ms-RL)                                 |
+// |    You should have received a copy of the Microsoft Reciprocal License (Ms-RL)                             |
 // |    along with this program.  If not, see <http://opensource.org/licenses/MS-RL>.                           |
 // |                                                                                                            |
 // |    Copyright © Pascal Hubert - Brussels, Belgium 2017. <mailto:pascal.hubert@outlook.com>                  |
