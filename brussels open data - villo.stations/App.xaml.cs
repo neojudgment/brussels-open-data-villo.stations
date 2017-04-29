@@ -1,22 +1,22 @@
 ﻿// •————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // |                                                                                                            |
-// |    brussels open data - villo.stations is a proof of concept (PoC). <https://github.com/neojudgment/>       |
+// |    brussels open data - villo.stations is a proof of concept (PoC). <https://github.com/neojudgment/>      |
 // |                                                                                                            |
-// |    villo.stations is a free Wi-Fi network covering certain zones of the territory of                        |
+// |    villo.stations is a free Wi-Fi network covering certain zones of the territory of                       |
 // |    the territory of the Brussels-Capital Region in Belgium.                                                |
 // |                                                                                                            |
-// |    brussels open data - villo.stations uses Microsoft WindowsAPICodePack and GMap.NET to                    |
+// |    brussels open data - villo.stations uses Microsoft WindowsAPICodePack and GMap.NET to                   |
 // |    demonstrate how to retrieve data from Brussels open data Store.                                         |
 // |                                                                                                            |
-// |    brussels open data - villo.stations uses Elysium library that implements Modern UI for                   |
+// |    brussels open data - villo.stations uses Elysium library that implements Modern UI for                  |
 // |    Windows Presentation Foundation.                                                                        |
 // |                                                                                                            |
-// |    This program is under Microsoft Public License (Ms-RL)                                                  |
+// |    This program is under Microsoft Reciprocal License (Ms-RL)                                              |
 // |                                                                                                            |
 // |    This program is distributed in the hope that it will be useful but WITHOUT ANY WARRANTY;                |
 // |    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.               |
 // |                                                                                                            |
-// |    You should have received a copy of the Microsoft Public License (Ms-RL)                                 |
+// |    You should have received a copy of the Microsoft Reciprocal License (Ms-RL)                             |
 // |    along with this program.  If not, see <http://opensource.org/licenses/MS-RL>.                           |
 // |                                                                                                            |
 // |    Copyright © Pascal Hubert - Brussels, Belgium 2017. <mailto:pascal.hubert@outlook.com>                  |
