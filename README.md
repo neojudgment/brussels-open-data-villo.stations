@@ -14,7 +14,7 @@ brussels open data - villo.stations uses [Microsoft Windows API Code Pack](http:
 
 brussels open data - villo.stations uses [Elysium library](http://elysium.asvishnyakov.com/en/) that implements Modern UI for Windows Presentation Foundation.
 
-villo.stations is developed on Visual Studio 2017 in C#7 under Windows 10 Professional 64 bit. The Framework 4.6 2 is required.
+villo.stations is developed on Visual Studio 2017 in C#7 under Windows 10 Professional 64 bit. The Framework 4.6.2 is required.
 
 This program is under [Microsoft Reciprocal License (Ms-RL)](http://opensource.org/licenses/MS-RL/).
 
