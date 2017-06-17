@@ -124,8 +124,6 @@ namespace OpenData
             InitializeComponent();
             SourceInitialized += WindowsSourceInitialized;
 
-            CreateDirectory();
-
             ProfileOptimization.SetProfileRoot(GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations" + "\\profiles");
             ProfileOptimization.StartProfile("profile");
 
@@ -436,7 +434,7 @@ namespace OpenData
                     {
                         if (_mytag == 0)
                         {
-                            _mytag = 57;
+                            _mytag = 58;
                         }
 
                         if (_mytag == i)
@@ -545,7 +543,7 @@ namespace OpenData
                 {
                     if (_firststart)
                     {
-                        tag = 57;
+                        tag = 58;
                         _firststart = false;
                     }
                     else if (!_RealTime)
@@ -1960,46 +1958,6 @@ namespace OpenData
         }
 
         #endregion InitialisationTraceListener
-
-        #region CreateDirectory
-
-        private void CreateDirectory()
-        {
-            try
-            {
-                string path = GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations";
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-
-                if (Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path + "\\log");
-                    Directory.CreateDirectory(path + "\\json");
-                    Directory.CreateDirectory(path + "\\profiles");
-                    Trace.WriteLine("Répertoires Appdata brussels open data - villo.stations créés avec succès");
-                }
-
-                string path1 = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\brussels open data - villo.stations";
-                if (!Directory.Exists(path1))
-                {
-                    Directory.CreateDirectory(path1);
-                }
-
-                if (Directory.Exists(path1))
-                {
-                    Directory.CreateDirectory(path1 + "\\cache\\");
-                    Trace.WriteLine("Répertoires ApplicationData brussels open data - villo.stations créés avec succès");
-                }
-            }
-            catch (IOException ex)
-            {
-                Trace.WriteLine("Répertoires Appdata brussels open data - villo.stations créés sans succès: " + ex);
-            }
-        }
-
-        #endregion CreateDirectory
 
         #region ProxyAuthentification
 

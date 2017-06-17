@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brussels open data - villo.stations", "brussels open data - villo.stations\brussels open data - villo.stations.csproj", "{48A98F19-7D95-41DB-B49B-C82557C1CA73}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "villo.stations", "villo.stations\villo.stations.vdproj", "{702DEF1E-7B85-4077-8035-27EE231D5A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{48A98F19-7D95-41DB-B49B-C82557C1CA73}.Debug|x86.Build.0 = Debug|x86
 		{48A98F19-7D95-41DB-B49B-C82557C1CA73}.Release|x86.ActiveCfg = Release|x86
 		{48A98F19-7D95-41DB-B49B-C82557C1CA73}.Release|x86.Build.0 = Release|x86
+		{702DEF1E-7B85-4077-8035-27EE231D5A66}.Debug|x86.ActiveCfg = Debug
+		{702DEF1E-7B85-4077-8035-27EE231D5A66}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
