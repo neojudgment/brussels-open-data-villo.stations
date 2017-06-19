@@ -71,20 +71,21 @@ namespace OpenData
             }
 
             // Optisation ngen
-            string runtimeStr = RuntimeEnvironment.GetRuntimeDirectory();
-            string ngenStr = Path.Combine(runtimeStr, "ngen.exe");
-
-            Process process = new Process();
-            process.StartInfo.FileName = ngenStr;
-
+            string RuntimePath = RuntimeEnvironment.GetRuntimeDirectory();
+            string NgenPath = Path.Combine(RuntimePath, "ngen.exe");
             string assemblyPath = Context.Parameters["assemblypath"];
 
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.Arguments = "install \"" + assemblyPath + "\"";
+            ProcessStartInfo process = new ProcessStartInfo()
+            {
+                FileName = NgenPath,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                Arguments = "install \"" + assemblyPath + "\""
+            };
 
-            process.Start();
-            process.WaitForExit();
+            Process rootProc = Process.Start(process);
+            rootProc.WaitForExit();
+            rootProc.Dispose();
         }
 
         public override void Uninstall(IDictionary savedState)
@@ -92,17 +93,17 @@ namespace OpenData
             base.Uninstall(savedState);
 
             // Suppression des données résiduelles et des répertoires
-            string pathAppData = GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations";
-            string pathProgramData = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\brussels open data - villo.stations";
+            string AppDataPath = GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations";
+            string ProgramDataPath = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\brussels open data - villo.stations";
 
-            if (pathAppData != null && Directory.Exists(pathAppData))
+            if (AppDataPath != null && Directory.Exists(AppDataPath))
             {
-                Directory.Delete(pathAppData, recursive: true);
+                Directory.Delete(AppDataPath, recursive: true);
             }
 
-            if (pathProgramData != null && Directory.Exists(pathProgramData))
+            if (ProgramDataPath != null && Directory.Exists(ProgramDataPath))
             {
-                Directory.Delete(pathProgramData, recursive: true);
+                Directory.Delete(ProgramDataPath, recursive: true);
             }
         }
 
@@ -110,26 +111,30 @@ namespace OpenData
         {
             base.OnAfterInstall(savedState);
 
-            // Inscription du certificat Root Ascertia
+            // Inscription du certificat Root
             string ApplicationPath = Context.Parameters["AssemblyPath"];
-
             int indexOfSteam = ApplicationPath.IndexOf("villo.stations.exe");
+
             if (indexOfSteam >= 0)
+            {
                 ApplicationPath = ApplicationPath.Remove(indexOfSteam);
+            }
 
-            string CertificateRoot = ApplicationPath + "AscertiaRootCA.der";
+            ProcessStartInfo process = new ProcessStartInfo()
+            {
+                FileName = ApplicationPath + "certmgr.exe",
+                WorkingDirectory = ApplicationPath,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                Verb = "runas",
+                Arguments = "-add -all -c AscertiaRootCA.der -s -r localMachine root"
+            };
 
-            ProcessStartInfo process = new ProcessStartInfo();
-            process.FileName = ApplicationPath + "certmgr.exe";
-            process.WorkingDirectory = ApplicationPath;
-            process.UseShellExecute = false;
-            process.CreateNoWindow = true;
-            process.Verb = "runas";
-            process.Arguments = "-add -all -c AscertiaRootCA.der -s -r localMachine root";
             Process rootProc = Process.Start(process);
             rootProc.WaitForExit();
             rootProc.Dispose();
 
+            // Suppression des fichiers obsolètes
             if (File.Exists(ApplicationPath + "certmgr.exe"))
             {
                 File.Delete(ApplicationPath + "certmgr.exe");
