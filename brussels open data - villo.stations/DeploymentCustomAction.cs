@@ -44,6 +44,7 @@ namespace OpenData
         {
             base.Install(stateSaver);
 
+            // Création des répertoires
             string path = GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations";
 
             if (!Directory.Exists(path))
@@ -69,6 +70,7 @@ namespace OpenData
                 Directory.CreateDirectory(path1 + "\\cache\\");
             }
 
+            // Optisation ngen
             string runtimeStr = RuntimeEnvironment.GetRuntimeDirectory();
             string ngenStr = Path.Combine(runtimeStr, "ngen.exe");
 
@@ -88,24 +90,65 @@ namespace OpenData
         public override void Uninstall(IDictionary savedState)
         {
             base.Uninstall(savedState);
-            try
-            {
-                string pathAppData = GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations";
-                string pathProgramData = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\brussels open data - villo.stations";
 
-                if (pathAppData != null && Directory.Exists(pathAppData))
-                {
-                    Directory.Delete(pathAppData, recursive: true);
-                }
+            // Suppression des données résiduelles et des répertoires
+            string pathAppData = GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations";
+            string pathProgramData = GetFolderPath(SpecialFolder.CommonApplicationData) + "\\brussels open data - villo.stations";
 
-                if (pathProgramData != null && Directory.Exists(pathProgramData))
-                {
-                    Directory.Delete(pathProgramData, recursive: true);
-                }
-            }
-            catch
+            if (pathAppData != null && Directory.Exists(pathAppData))
             {
+                Directory.Delete(pathAppData, recursive: true);
             }
+
+            if (pathProgramData != null && Directory.Exists(pathProgramData))
+            {
+                Directory.Delete(pathProgramData, recursive: true);
+            }
+        }
+
+        protected override void OnAfterInstall(IDictionary savedState)
+        {
+            base.OnAfterInstall(savedState);
+
+            // Inscription du certificat Root Ascertia
+            string ApplicationPath = Context.Parameters["AssemblyPath"];
+
+            int indexOfSteam = ApplicationPath.IndexOf("villo.stations.exe");
+            if (indexOfSteam >= 0)
+                ApplicationPath = ApplicationPath.Remove(indexOfSteam);
+
+            string CertificateRoot = ApplicationPath + "AscertiaRootCA.der";
+
+            ProcessStartInfo process = new ProcessStartInfo();
+            process.FileName = ApplicationPath + "certmgr.exe";
+            process.WorkingDirectory = ApplicationPath;
+            process.UseShellExecute = false;
+            process.CreateNoWindow = true;
+            process.Verb = "runas";
+            process.Arguments = "-add -all -c AscertiaRootCA.der -s -r localMachine root";
+            Process rootProc = Process.Start(process);
+            rootProc.WaitForExit();
+            rootProc.Dispose();
+
+            if (File.Exists(ApplicationPath + "certmgr.exe"))
+            {
+                File.Delete(ApplicationPath + "certmgr.exe");
+            }
+
+            if (File.Exists(ApplicationPath + "AscertiaRootCA.der"))
+            {
+                File.Delete(ApplicationPath + "AscertiaRootCA.der");
+            }
+        }
+
+        public override void Commit(IDictionary savedState)
+        {
+            base.Commit(savedState);
+        }
+
+        public override void Rollback(IDictionary savedState)
+        {
+            base.Rollback(savedState);
         }
     }
 }
