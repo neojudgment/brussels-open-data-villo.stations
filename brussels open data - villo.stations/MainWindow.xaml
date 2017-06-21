@@ -14,7 +14,7 @@
               Foreground="Black"
               IsHitTestVisible="True"
               Loaded=" MainWindow_Loaded"
-              ResizeMode="NoResize"
+              ResizeMode="CanMinimize"
               TextOptions.TextFormattingMode="Display"
               TextOptions.TextRenderingMode="ClearType"
               WindowStartupLocation="CenterScreen">

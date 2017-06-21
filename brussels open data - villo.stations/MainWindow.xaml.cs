@@ -123,6 +123,7 @@ namespace OpenData
         {
             InitializeComponent();
             SourceInitialized += WindowsSourceInitialized;
+            StateChanged += WindowStateChanged;
 
             ProfileOptimization.SetProfileRoot(GetFolderPath(SpecialFolder.ApplicationData) + "\\brussels open data - villo.stations" + "\\profiles");
             ProfileOptimization.StartProfile("profile");
@@ -2031,6 +2032,7 @@ namespace OpenData
             {
                 case WmSyscommand:
                     int command = wParam.ToInt32() & 0xFFF0;
+
                     if (command == ScMove)
                     {
                         handled = false;
@@ -2049,10 +2051,7 @@ namespace OpenData
             if (WindowState == WindowState.Maximized)
             {
                 WindowState = WindowState.Normal;
-            }
-            if (WindowState == WindowState.Minimized)
-            {
-                WindowState = WindowState.Normal;
+                return;
             }
         }
 
