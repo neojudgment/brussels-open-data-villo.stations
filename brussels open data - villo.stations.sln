@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brussels open data - villo.stations", "brussels open data - villo.stations\brussels open data - villo.stations.csproj", "{48A98F19-7D95-41DB-B49B-C82557C1CA73}"
 EndProject
@@ -22,5 +22,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5E8E00E-EF89-4024-9002-88A2BAE4EAEB}
 	EndGlobalSection
 EndGlobal
