@@ -54,7 +54,7 @@
                      Grid.ColumnSpan="2"
                      Width="594"
                      Height="329"
-                     Margin="154,77,0,0"
+                     Margin="155,79,0,0"
                      HorizontalAlignment="Left"
                      VerticalAlignment="Top"
                      Background="Transparent"
@@ -165,7 +165,7 @@
                 <Paragraph>
                     All trademarks and registered trademarks are the property of their respective owners.
                 </Paragraph>
-                <Paragraph>Copyright © Pascal Hubert. Brussels, Belgium 2017.</Paragraph>
+                <Paragraph>Copyright © Pascal Hubert. Brussels, Belgium 2022.</Paragraph>
             </FlowDocument>
         </RichTextBox>
 

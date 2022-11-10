@@ -14,7 +14,7 @@ using System.Windows;
 [assembly: AssemblyDescription("villo.stations, location of the Villo! stations in the Brussels Capital Region with indication of the availability (bikes, bike stands) in real time.")]
 [assembly: AssemblyCompany("brussels open data - villo.stations")]
 [assembly: AssemblyProduct("brussels open data - villo.stations")]
-[assembly: AssemblyCopyright("Copyright © 2017 Pascal Hubert")]
+[assembly: AssemblyCopyright("Copyright © 2022 Pascal Hubert")]
 [assembly: AssemblyTrademark("Pascal Hubert")]
 [assembly: ComVisible(false)]
 
